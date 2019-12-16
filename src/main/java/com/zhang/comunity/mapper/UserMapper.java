@@ -15,4 +15,6 @@ public interface UserMapper {
      List<User> getUsers();
 
      int addUser(User user);
+
+     User getUserByToken(String value);
 }

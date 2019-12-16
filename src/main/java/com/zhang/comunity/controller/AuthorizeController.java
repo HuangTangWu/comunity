@@ -1,5 +1,6 @@
 package com.zhang.comunity.controller;
 
+import com.sun.deploy.net.HttpResponse;
 import com.zhang.comunity.dto.AccessTokenDTO;
 import com.zhang.comunity.dto.GithubUser;
 import com.zhang.comunity.entity.User;
@@ -12,6 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.UUID;
@@ -40,7 +44,8 @@ public class AuthorizeController {
 
     @GetMapping("/callback")
     public String callback(@RequestParam(name = "code") String code,
-                           @RequestParam(name = "state") String state, HttpSession session){
+                           @RequestParam(name = "state") String state, HttpSession session,
+                           HttpServletResponse response){
         AccessTokenDTO accessTokenDTO =new AccessTokenDTO();
         accessTokenDTO.setCode(code);
         accessTokenDTO.setRedirect_uri(redirect_id);
@@ -54,12 +59,13 @@ public class AuthorizeController {
 //            System.out.println(userList);
             User user = new User();
             user.setName(githubUser.getName());
-            user.setToken(UUID.randomUUID().toString());
+            String token = UUID.randomUUID().toString();
+            user.setToken(token);
             user.setAccountId(String.valueOf(githubUser.getId()));
             user.setGmt_create(System.currentTimeMillis());
             user.setGmt_modify(user.getGmt_create());
             userMapper.addUser(user);
-            session.setAttribute("user",githubUser);
+            response.addCookie(new Cookie("token",token));
             return "redirect:/";
         }else{
             return "/";

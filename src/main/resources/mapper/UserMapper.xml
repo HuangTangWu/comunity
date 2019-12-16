@@ -9,4 +9,7 @@
         insert into user(name,account_id,token,gmt_create,gmt_modify) values (#{name},#{accountId},#{token},#{gmt_create},#{gmt_modify})
     </insert>
 
+    <select id="getUserByToken" resultType="user">
+        select * from user where token=#{value}
+    </select>
 </mapper>

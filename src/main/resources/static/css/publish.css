@@ -1,0 +1,10 @@
+.main{
+    margin: 30px;
+    background-color: white;
+}
+body{
+    background-color: #efefef;
+}
+#publish-submit{
+    float: right;
+}
