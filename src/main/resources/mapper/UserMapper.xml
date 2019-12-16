@@ -6,10 +6,15 @@
     </select>
 
     <insert id="addUser" parameterType="user">
-        insert into user(name,account_id,token,gmt_create,gmt_modify) values (#{name},#{accountId},#{token},#{gmt_create},#{gmt_modify})
+        insert into user(name,account_id,token,gmt_create,gmt_modify,avatar_url)
+            values
+             (#{name},#{accountId},#{token},#{gmt_create},#{gmt_modify},#{avatarUrl})
     </insert>
 
     <select id="getUserByToken" resultType="user">
         select * from user where token=#{value}
+    </select>
+    <select id="getUserById" resultType="user">
+        select * from user where id=#{value}
     </select>
 </mapper>

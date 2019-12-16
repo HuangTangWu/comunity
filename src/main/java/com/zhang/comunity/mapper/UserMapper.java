@@ -17,4 +17,6 @@ public interface UserMapper {
      int addUser(User user);
 
      User getUserByToken(String value);
+
+    User getUserById(Integer creator);
 }

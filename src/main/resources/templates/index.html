@@ -5,6 +5,7 @@
     <title>幽兰社区</title>
     <link rel="stylesheet" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="webjars/bootstrap/3.3.7/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/publish.css">
     <script type="text/javascript" src="webjars/jquery/3.3.1/jquery.min.js"></script>
     <script type="application/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -16,7 +17,7 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">幽兰社区</span>
             </button>
-            <a class="navbar-brand" href="#">幽兰社区</a>
+            <a class="navbar-brand" href="/">幽兰社区</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,7 +28,9 @@
                 </div>
                 <button type="submit" class="btn btn-default">搜索</button>
             </form>
+
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="/publish">发布</a></li>
                 <li class="dropdown" th:if="${session.user!=null}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                        role="button" aria-haspopup="true" aria-expanded="false"
@@ -43,5 +46,45 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="container-fluid col-lg-9 col-md-12 col-sm-12 col-xs-12" >
+            <h2><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;&nbsp;<span>发现</span></h2>
+            <hr/>
+                <div class="media" th:each="question: ${questionList.list}">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object header-pic img-rounded" src="https://avatars0.githubusercontent.com/u/49721519?v=4">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">[(${question.title})]</h4>
+                        <span th:text="${question.description}"></span><br>
+                        <span class="desc-text">[(${question.user.name})]发布了文章• [(${question.comment_count})] 个评论 • [(${question.view_count})] 次浏览 • <span th:text="${#dates.format(question.gmt_create,'yyyy-MM-dd HH:mm')}"></span></span>
+                    </div>
+                </div>
+            <nav aria-label="Page navigation pageSplit">
+                <ul class="pagination" >
+                    <li>
+                        <a th:href="@{/(pageNum=1)}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li th:each="i:${#numbers.sequence(1,total_question%5==0?total_question/5:total_question/5+1)}">
+                        <a th:href="@{/(pageNum=${i})}" th:text="${i}"></a></li>
+                    <li>
+                        <a th:href="@{/(pageNum=${total_question%5==0?total_question/5:total_question/5+1})}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container-fluid col-lg-3 col-md-12 col-sm-12 col-xs-12" >
+            <h1>问题发起飞洒</h1>
+
+        </div>
+    </div>
+</div>
 </body>
 </html>

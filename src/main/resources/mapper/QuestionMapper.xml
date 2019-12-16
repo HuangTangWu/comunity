@@ -13,4 +13,15 @@
             #{creator},
             #{tag})
     </insert>
+
+    <select id="getAllQuestion" resultType="question">
+        select
+            id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag
+        from
+            question
+    </select>
+
+    <select id="countQuestion" resultType="Integer">
+        select count(*) from question
+    </select>
 </mapper>

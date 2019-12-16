@@ -8,3 +8,18 @@ body{
 #publish-submit{
     float: right;
 }
+
+.pageSplit{
+    float: right;
+}
+
+.desc-text{
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+}
+
+.header-pic{
+    height: 48px;
+    width: 45px;
+}
