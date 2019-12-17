@@ -9,9 +9,7 @@ body{
     float: right;
 }
 
-.pageSplit{
-    float: right;
-}
+
 
 .desc-text{
     font-size: 12px;
@@ -22,4 +20,8 @@ body{
 .header-pic{
     height: 48px;
     width: 45px;
+}
+
+.pageSplit{
+    float: right;
 }

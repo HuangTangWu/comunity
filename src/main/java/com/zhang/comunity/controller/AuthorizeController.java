@@ -1,6 +1,5 @@
 package com.zhang.comunity.controller;
 
-import com.sun.deploy.net.HttpResponse;
 import com.zhang.comunity.dto.AccessTokenDTO;
 import com.zhang.comunity.dto.GithubUser;
 import com.zhang.comunity.entity.User;
