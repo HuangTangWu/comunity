@@ -19,4 +19,8 @@ public interface UserMapper {
      User getUserByToken(String value);
 
     User getUserById(Integer creator);
+
+    void updateUser(User user);
+
+    User getUserByAccount(String accountId);
 }

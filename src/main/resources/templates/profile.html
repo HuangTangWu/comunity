@@ -20,7 +20,7 @@
                 <div class="media" th:each="userquestion:${pagination.DTOList.list}">
                     <div class="media-left">
                         <a href="#">
-                            <img class="media-object header-pic img-rounded" th:src="${user.avatarUrl}">
+                            <img class="media-object header-pic img-rounded" th:src="${session.user.avatarUrl}">
                         </a>
                     </div>
                     <div class="media-body">

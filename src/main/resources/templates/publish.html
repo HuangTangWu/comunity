@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>幽兰社区</title>
-    <link rel="stylesheet" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="webjars/bootstrap/3.3.7/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap-theme.css">
     <link rel="stylesheet" href="/css/publish.css">
-    <script type="text/javascript" src="webjars/jquery/3.3.1/jquery.min.js"></script>
-    <script type="application/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script type="application/javascript" src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -20,6 +20,7 @@
             <hr/>
 
             <form action="/publish" method="post">
+                <input type="hidden" th:value="${questionId}" name="id">
                 <div class="form-group">
                     <label for="title">问题标题(简单扼要):</label>
                     <input type="text" name="title" th:value="${title}" class="form-control" id="title" placeholder="问题标题.....">

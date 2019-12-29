@@ -1,5 +1,7 @@
 package com.zhang.comunity.mapper;
 
+import com.zhang.comunity.dto.QuestionDTO;
+import com.zhang.comunity.dto.UserQuestionDTO;
 import com.zhang.comunity.entity.Question;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -17,4 +19,14 @@ public interface QuestionMapper {
     List<Question> getAllQuestion();
 
     int countQuestion();
+
+    UserQuestionDTO getMyQuestion(Integer userId);
+
+    int countMyQuestion(Integer userId);
+
+    List<Question> getMyQuestions(Integer userId);
+
+    Question getQuestionById(Integer id);
+
+    int updateQuestion(Question question);
 }

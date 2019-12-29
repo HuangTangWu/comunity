@@ -21,20 +21,4 @@ public class Question {
     private String tag;
 
 
-
-    @Override
-    public String toString() {
-        return "Question{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", gmt_create=" + gmt_create +
-                ", gmt_modify=" + gmt_modify +
-                ", creator=" + creator +
-                ", comment_count=" + comment_count +
-                ", view_count=" + view_count +
-                ", like_count=" + like_count +
-                ", tag='" + tag + '\'' +
-                '}';
-    }
 }

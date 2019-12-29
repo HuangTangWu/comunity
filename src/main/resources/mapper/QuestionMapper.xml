@@ -24,4 +24,79 @@
     <select id="countQuestion" resultType="Integer">
         select count(*) from question
     </select>
+
+    <resultMap id="questionDtoMap" type="com.zhang.comunity.dto.UserQuestionDTO">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="accountId" property="accountId"></result>
+        <result column="token" property="token"></result>
+        <result column="gmt_create" property="gmt_create"></result>
+        <result column="gmt_modify" property="gmt_modify"></result>
+        <result column="avatarUrl" property="avatarUrl"></result>
+        <collection property="questionList" ofType="question">
+            <id column="id2" property="id"></id>
+            <result column="title" property="title"></result>
+            <result column="description" property="description"></result>
+            <result column="gmt_create" property="gmt_create"></result>
+            <result column="gmt_modify" property="gmt_modify"></result>
+            <result column="creator" property="creator"></result>
+            <result column="comment_count" property="comment_count"></result>
+            <result column="view_count" property="view_count"></result>
+            <result column="like_count" property="like_count"></result>
+            <result column="tag" property="tag"></result>
+        </collection>
+    </resultMap>
+
+    <select id="getMyQuestion" resultMap="questionDtoMap">
+        select
+            ur.id,ur.name,ur.account_id accountId,ur.token,ur.gmt_create,ur.gmt_modify,ur.avatar_url avatarUrl,
+            qs.id id2,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag
+        from
+            question qs,user ur
+        where
+            qs.creator=ur.id and ur.id=#{value}
+    </select>
+
+    <select id="getMyQuestions" resultType="question">
+        select
+            qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag
+        from
+            question qs,user ur
+        where
+            qs.creator=ur.id and ur.id=#{value}
+    </select>
+
+    <select id="countMyQuestion" resultType="Integer">
+        select
+            count(1)
+        from
+            (select
+            ur.id,ur.name,ur.account_id,ur.token,ur.gmt_create,ur.gmt_modify,ur.avatar_url,qs.creator
+        from
+            question qs,user ur
+        where
+            qs.creator=ur.id and ur.id=#{value}) userQuestion
+    </select>
+
+
+    <select id="getQuestionById" resultType="question">
+        select
+            qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag
+        from
+            question qs
+        where
+            qs.id=#{value}
+    </select>
+
+    <update id="updateQuestion" parameterType="question">
+        update
+            question
+        set
+            description=#{description},
+            title=#{title},
+            tag=#{tag},
+            gmt_modify=#{gmt_modify}
+        where
+            id=#{id}
+    </update>
 </mapper>

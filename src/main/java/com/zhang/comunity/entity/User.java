@@ -18,15 +18,4 @@ public class User {
     private String avatarUrl;
 
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", accountId='" + accountId + '\'' +
-                ", token='" + token + '\'' +
-                ", gmt_create=" + gmt_create +
-                ", gmt_modify=" + gmt_modify +
-                '}';
-    }
 }

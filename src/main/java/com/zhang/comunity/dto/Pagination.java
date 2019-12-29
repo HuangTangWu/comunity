@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Data
 public class Pagination {
-    private PageInfo<QuestionDTO> questionDTOList;
+    private PageInfo<?> DTOList;
     private Boolean showPreviews;
     private Boolean showFirstPage;
     private Boolean showEndPage;

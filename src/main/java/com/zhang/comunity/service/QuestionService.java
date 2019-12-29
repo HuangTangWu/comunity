@@ -1,6 +1,9 @@
 package com.zhang.comunity.service;
 
+import com.github.pagehelper.PageInfo;
+import com.zhang.comunity.dto.Pagination;
 import com.zhang.comunity.dto.QuestionDTO;
+import com.zhang.comunity.dto.UserQuestionDTO;
 import com.zhang.comunity.entity.Question;
 import com.zhang.comunity.entity.User;
 import com.zhang.comunity.mapper.QuestionMapper;
@@ -38,7 +41,50 @@ public class QuestionService {
         return questionDTOList;
     }
 
+    public UserQuestionDTO getMyQuestion(Integer userID){
+        return questionMapper.getMyQuestion(userID);
+
+    }
+
+    public List<Question> getMyQuestions(Integer userID){
+        return questionMapper.getMyQuestions(userID);
+
+    }
+
+    public int countMyQuestion(Integer userId){
+        return questionMapper.countMyQuestion(userId);
+    }
+
     public int countQuestion(){
         return questionMapper.countQuestion();
+    }
+
+    /**
+     * 处理分页
+     */
+    public Pagination getPages(Integer totalCount, Integer pageNum, Integer pagesize, PageInfo<?> DTOList){
+        Pagination pagination = new Pagination();
+        pagination.setPagination(totalCount,pageNum,pagesize);
+        pagination.setDTOList(DTOList);
+        return pagination;
+    }
+
+    public QuestionDTO getQuestionById(Integer id) {
+        Question question=questionMapper.getQuestionById(id);
+        QuestionDTO questionDTO=new QuestionDTO();
+        User u=userMapper.getUserById(question.getCreator());
+        BeanUtils.copyProperties(question,questionDTO);
+        questionDTO.setUser(u);
+        return  questionDTO;
+    }
+
+    public void createOrUpdate(Question question){
+        if(question.getId()==null){
+            //新建
+            questionMapper.addQuestion(question);
+        }else {
+            //更新
+            questionMapper.updateQuestion(question);
+        }
     }
 }

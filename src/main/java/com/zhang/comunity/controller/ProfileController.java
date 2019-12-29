@@ -3,8 +3,6 @@ package com.zhang.comunity.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zhang.comunity.dto.Pagination;
-import com.zhang.comunity.dto.QuestionDTO;
-import com.zhang.comunity.dto.UserQuestionDTO;
 import com.zhang.comunity.entity.Question;
 import com.zhang.comunity.entity.User;
 import com.zhang.comunity.mapper.UserMapper;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -30,28 +27,15 @@ public class ProfileController {
     @Autowired
     private QuestionService questionService;
 
-    @Autowired
-    private UserMapper userMapper;
-
     @RequestMapping("/profile/{action}")
     public String question(@PathVariable(value = "action") String action, Model model, HttpServletRequest request,
                            @RequestParam(value = "pageNum",defaultValue = "1") String pageNum,
                            @RequestParam(value ="pageSize" ,defaultValue = "6") String pageSize){
-        Cookie[] cookies=request.getCookies();
-        User u=null;
-        if(cookies!=null&&cookies.length>0){
-            for(Cookie cookie:cookies){
-                if(cookie.getName().equals("token")){
-                    u=userMapper.getUserByToken(cookie.getValue());
-                    request.getSession().setAttribute("user",u);
-                    break;
-                }
-            }
-        }
+        User u=(User)request.getSession().getAttribute("user");
         if(u==null){
             return "/";
         }
-        model.addAttribute("user",u);
+        // model.addAttribute("user",u);
         if("question".equals(action)){
             model.addAttribute("sectionName","我的问题");
             model.addAttribute("section","question");
@@ -64,7 +48,7 @@ public class ProfileController {
         int page_num=Integer.parseInt(pageNum);
         int page_size=Integer.parseInt(pageSize);
         PageHelper.startPage(page_num,page_size);
-        List<Question> myQuesitonsList = questionService.getMyQuesitons(u.getId());
+        List<Question> myQuesitonsList = questionService.getMyQuestions(u.getId());
         PageInfo<Question> pageInfo=new PageInfo<>(myQuesitonsList);
 
         Pagination pagination=questionService.getPages(totalMyQuesiton,page_num,page_size,pageInfo);

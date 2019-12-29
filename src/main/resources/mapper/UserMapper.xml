@@ -12,9 +12,31 @@
     </insert>
 
     <select id="getUserByToken" resultType="user">
-        select * from user where token=#{value}
+        select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where token=#{value}
     </select>
     <select id="getUserById" resultType="user">
-        select * from user where id=#{value}
+        select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=#{value}
     </select>
+
+    <select id="getUserByAccount" resultType="user">
+        select
+            id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl
+        from
+            user u
+        where
+            account_id=#{value}
+
+    </select>
+
+    <update id="updateUser" parameterType="user">
+        update
+            user
+        set
+            name=#{name},
+            token=#{token},
+            gmt_modify=#{gmt_modify},
+            avatar_url=#{avatarUrl}
+        where
+            id=#{id}
+    </update>
 </mapper>
