@@ -18,7 +18,8 @@ public class GithubProvider {
     public String getAccessToken(AccessTokenDTO dto){
         MediaType mediaType = MediaType.get("application/json; charset=utf-8");
         OkHttpClient client = new OkHttpClient();
-        RequestBody body = RequestBody.create(mediaType, JSON.toJSONString(dto));
+        String jsonString = JSON.toJSONString(dto);
+        RequestBody body = RequestBody.create(jsonString,mediaType);
         Request request = new Request.Builder()
                 .url("https://github.com/login/oauth/access_token")
                 .post(body)
@@ -27,7 +28,6 @@ public class GithubProvider {
             Response response = client.newCall(request).execute();
             String string = response.body().string();
             String token_id=string.split("&")[0].split("=")[1];
-            //System.out.println(string+"====>"+token_id);
             return token_id;
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,6 +45,9 @@ public class GithubProvider {
             try (Response response = client.newCall(request).execute()) {
                 String jsonMsg= response.body().string();
                 GithubUser githubUser= JSON.parseObject(jsonMsg,GithubUser.class);
+                if(0==githubUser.getId()&&githubUser.getName()==null){
+                    return null;
+                }
                 return  githubUser;
             } catch (IOException e) {
                 e.printStackTrace();

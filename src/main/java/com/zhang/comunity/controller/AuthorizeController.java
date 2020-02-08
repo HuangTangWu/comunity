@@ -67,7 +67,7 @@ public class AuthorizeController {
             response.addCookie(new Cookie("token",token));
             return "redirect:/";
         }else{
-            return "/";
+            return "error";
         }
     }
 
