@@ -6,6 +6,9 @@ import com.zhang.comunity.dto.QuestionDTO;
 import com.zhang.comunity.dto.UserQuestionDTO;
 import com.zhang.comunity.entity.Question;
 import com.zhang.comunity.entity.User;
+import com.zhang.comunity.exception.CustomizeErrorCode;
+import com.zhang.comunity.exception.CustomizeException;
+import com.zhang.comunity.exception.ICustomizeErrorCode;
 import com.zhang.comunity.mapper.QuestionMapper;
 import com.zhang.comunity.mapper.UserMapper;
 import org.springframework.beans.BeanUtils;
@@ -71,6 +74,9 @@ public class QuestionService {
 
     public QuestionDTO getQuestionById(Integer id) {
         Question question=questionMapper.getQuestionById(id);
+        if(question==null){
+            throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+        }
         QuestionDTO questionDTO=new QuestionDTO();
         User u=userMapper.getUserById(question.getCreator());
         BeanUtils.copyProperties(question,questionDTO);
@@ -84,7 +90,10 @@ public class QuestionService {
             questionMapper.addQuestion(question);
         }else {
             //更新
-            questionMapper.updateQuestion(question);
+            int updated=questionMapper.updateQuestion(question);
+            if(updated!=1){
+                throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+            }
         }
     }
 }

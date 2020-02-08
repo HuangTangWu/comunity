@@ -2,6 +2,7 @@ package com.zhang.comunity.controller;
 
 import com.zhang.comunity.dto.QuestionDTO;
 import com.zhang.comunity.entity.User;
+import com.zhang.comunity.exception.CustomizeException;
 import com.zhang.comunity.mapper.UserMapper;
 import com.zhang.comunity.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
