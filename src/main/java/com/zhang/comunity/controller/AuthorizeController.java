@@ -24,6 +24,7 @@ import java.util.UUID;
  * @author Zhang Zeming
  * @version 1.0
  * @date 2019/12/13 15:16
+ * github授权获取token和用户
  */
 @Controller
 public class AuthorizeController {
