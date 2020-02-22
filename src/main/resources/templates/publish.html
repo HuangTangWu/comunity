@@ -5,7 +5,7 @@
     <title>幽兰社区</title>
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="/css/publish.css">
+    <link rel="stylesheet" href="/css/comunity.css">
     <script type="text/javascript" src="/webjars/jquery/3.3.1/jquery.min.js"></script>
     <script type="application/javascript" src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -23,17 +23,20 @@
                 <input type="hidden" th:value="${questionId}" name="id">
                 <div class="form-group">
                     <label for="title">问题标题(简单扼要):</label>
-                    <input type="text" name="title" th:value="${title}" class="form-control" id="title" placeholder="问题标题.....">
+                    <input type="text" name="title" th:value="${title}"  autocomplete="off"
+                           class="form-control" id="title" placeholder="问题标题.....">
                 </div>
 
                 <div class="form-group">
                     <label for="description">问题补充</label>
-                    <textarea class="form-control" th:utext="${description}" id="description" name="description" cols="30" rows="10"></textarea>
+                    <textarea class="form-control" th:utext="${description}" autocomplete="off"
+                              id="description" name="description" cols="30" rows="10"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="tag">输入标签</label>
-                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag" placeholder="请输入标签,以逗号隔开">
+                    <input type="text" class="form-control" th:value="${tag}"  autocomplete="off"
+                           id="tag" name="tag" placeholder="请输入标签,以逗号 , 隔开">
                 </div>
                 <span th:text="${error}" th:if="${error}" class="alert alert-info"></span>
                 <button id="publish-submit" type="submit" class="btn btn-success">发布</button>
@@ -41,17 +44,17 @@
         </div>
         <div class="container-fluid col-lg-3 col-md-12 col-sm-12 col-xs-12" >
             <h1>问题发起指南</h1>
-            ·问题备注必填,标签以分号隔开<br/>
-            ·问题备注必填,标签以分号隔开<br/>
-            ·问题备注必填,标签以分号隔开<br/>
-            ·问题备注必填,标签以分号隔开<br/>
-            ·问题备注必填,标签以分号隔开<br/>
-            ·问题备注必填,标签以分号隔开<br/>
-            ·问题备注必填,标签以分号隔开<br/>
-            ·问题备注必填,标签以分号隔开<br/>
-            ·问题备注必填,标签以分号隔开<br/>
-            ·问题备注必填,标签以分号隔开<br/>
-            ·问题备注必填,标签以分号隔开<br/>
+            <ul class="publish-question">
+                <li>
+                    问题标题:请用精简的语言描述您发布的问题,不超过25个字
+                </li>
+                <li>
+                    问题补充:详细补充您的问题内容，并确保问题描述清晰直观，并提供一些相关的资料
+                </li>
+                <li>
+                    选择标签:选择一个或者多个合适的标签,用逗号隔开,每个标签不超过10个字
+                </li>
+            </ul>
         </div>
     </div>
 </div>

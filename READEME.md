@@ -19,4 +19,20 @@ CREATE TABLE `user`  (
   `gmt_modify` bigint(255) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+create table comment
+(
+	id bigint auto_increment,
+	parent_id bigint null,
+	type int null,
+	commentator int null,
+	gmt_create bigint null,
+	gmt_modify bigint null,
+	like_count bigint default 0 null,
+	content varchar(1024) null,
+	constraint comment_pk
+		primary key (id)
+);
+
+
 ```

@@ -19,6 +19,8 @@
             id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag
         from
             question
+        order by
+            view_count desc
     </select>
 
     <select id="countQuestion" resultType="Integer">
@@ -99,4 +101,33 @@
         where
             id=#{id}
     </update>
+
+    <update id="incView" parameterType="Integer">
+        update
+            question
+        set
+            view_count=view_count+1
+        where
+            id=#{value}
+    </update>
+
+    <update id="incCommentCount" parameterType="Integer">
+        update
+            question
+        set
+            comment_count=comment_count+1
+        where
+            id=#{value}
+    </update>
+
+    <select id="getRelatedQuestionByTag"  resultType="question" parameterType="map">
+        select
+            qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag
+        from
+            question qs
+        where
+            qs.id!=#{id}
+        and
+            qs.tag REGEXP #{tag}
+    </select>
 </mapper>

@@ -5,10 +5,18 @@
     <title>幽兰社区</title>
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="/css/publish.css">
+    <link rel="stylesheet" href="/css/comunity.css">
     <script type="text/javascript" src="/webjars/jquery/3.3.1/jquery.min.js"></script>
     <script type="application/javascript" src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <script type="application/javascript">
+        window.onload=function () {
+            var isClose = window.localStorage.getItem("close");
+            if(isClose=="true"){
+                window.close();
+                window.localStorage.removeItem("close");
+            }
+        }
+    </script>
 </head>
 <body>
 <div th:insert="~{navigation :: nvi}"></div>

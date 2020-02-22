@@ -1,0 +1,118 @@
+.main{
+    margin: 30px;
+    background-color: white;
+}
+body{
+    background-color: #efefef;
+}
+#publish-submit{
+    float: right;
+}
+
+.question-wechat{
+    width: 150px;
+    margin-left: 8px;
+}
+.publish-question li{
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.desc-text{
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+}
+
+.header-pic{
+    height: 48px;
+    width: 45px;
+}
+
+.pageSplit{
+    float: right;
+}
+.profile-nag{
+    margin-top: 20px;
+}
+
+.question-menu{
+    color: #999;
+    font-size: 13px;
+}
+.jumbotron{
+    margin-left: 50px;
+}
+.content-desc{
+    margin: 10px 0px;
+}
+
+.media-body{
+    padding-top: 4px;
+}
+.btn-reply{
+    float: right;
+    margin-bottom: 10px;
+}
+
+.btn2-reply{
+    float: right;
+    margin: 10px 0px;
+}
+
+.question-comment{
+    margin-top: 5px;
+}
+
+.question-title{
+    margin-top: 25px;
+}
+.icon{
+    cursor: pointer;
+    color: #999;
+    margin-right: 15px;
+    font-size: 15px;
+}
+.question-comment .icon:hover{
+    color: #499ef3;
+}
+
+
+.all-comment{
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    margin-left: 20px;
+}
+
+.myReply{
+    margin-bottom: 20px;
+}
+
+.active{
+    color: #499ef3;
+}
+.sub-comments{
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #eee;
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+
+.icon-commentCount{
+    font-size: 15px;
+}
+
+.question-tags{
+    margin-right: 5px;
+    font-size: 13px;
+}
+
+.related-question{
+    list-style: none;
+    margin-left: -15px;
+    font-size: 17px;
+}

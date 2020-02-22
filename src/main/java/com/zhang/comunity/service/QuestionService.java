@@ -16,7 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Zhang Zeming
@@ -87,6 +89,9 @@ public class QuestionService {
     public void createOrUpdate(Question question){
         if(question.getId()==null){
             //新建
+            question.setComment_count(0);
+            question.setLike_count(0);
+            question.setView_count(0);
             questionMapper.addQuestion(question);
         }else {
             //更新
@@ -95,5 +100,27 @@ public class QuestionService {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
         }
+    }
+
+    public void incView(Integer id){
+        questionMapper.incView(id);
+    }
+
+    public void incCommentCount(Integer id){
+        questionMapper.incCommentCount(id);
+    }
+
+    //获取相关问题
+    public List<Question> getRelatedQuestionByTag(QuestionDTO questionDTO) {
+        StringBuilder builder=new StringBuilder();
+        for (String s : questionDTO.getTag().split(",")) {
+            builder.append(s).append("|");
+        }
+        String tag = builder.toString().substring(0,builder.length()-1);
+        Map<String,String> map=new HashMap<>();
+        map.put("id",String.valueOf(questionDTO.getId()));
+        map.put("tag",tag);
+        List<Question> questionList=questionMapper.getRelatedQuestionByTag(map);
+        return questionList;
     }
 }

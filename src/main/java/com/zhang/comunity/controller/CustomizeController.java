@@ -18,6 +18,7 @@ import java.util.Map;
  * @author Zhang Zeming
  * @version 1.0
  * @date 2020/2/8 14:49
+ * 错误页面处理
  */
 @Controller
 @RequestMapping("${server.error.path:${error.path:/error}}")

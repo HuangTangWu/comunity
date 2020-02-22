@@ -1,11 +1,11 @@
 package com.zhang.comunity.mapper;
 
-import com.zhang.comunity.dto.QuestionDTO;
 import com.zhang.comunity.dto.UserQuestionDTO;
 import com.zhang.comunity.entity.Question;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Zhang Zeming
@@ -29,4 +29,10 @@ public interface QuestionMapper {
     Question getQuestionById(Integer id);
 
     int updateQuestion(Question question);
+
+    void incView(Integer id);
+
+    void incCommentCount(Integer id);
+
+    List<Question> getRelatedQuestionByTag(Map map);
 }

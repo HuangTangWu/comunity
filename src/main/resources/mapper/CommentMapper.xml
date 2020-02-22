@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhang.comunity.mapper.CommentMapper">
+    <insert id="insertComment" parameterType="comment">
+        insert into comment
+            (parent_id,type,commentator,gmt_create,gmt_modify,like_count,content)
+        values(
+            #{parentId},
+            #{type},
+            #{commentator},
+            #{gmt_create},
+            #{gmt_modify},
+            #{likeCount},
+            #{content})
+
+    </insert>
+
+    <select id="selectCommentById" resultType="comment">
+        select
+            id,parent_id parentId,type,commentator,gmt_create,gmt_modify,like_count likeCount,comment_count commentCount,content
+        from
+            comment
+        where
+            id=#{value}
+    </select>
+
+    <select id="selectCommentByParentId" resultType="comment">
+        select
+            id,parent_id parentId,type,commentator,gmt_create,gmt_modify,like_count likeCount,comment_count commentCount,content
+        from
+            comment
+        where
+            parent_id=#{value}
+    </select>
+
+    <update id="incCommentCount" parameterType="Integer">
+        update
+            comment
+        set
+            comment_count=comment_count+1
+        where
+            id=#{value}
+    </update>
+</mapper>
