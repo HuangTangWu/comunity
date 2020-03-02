@@ -107,3 +107,22 @@ function doPost(parentId,content,type,url) {
         }
     })
 }
+
+//选择标签
+function  selectTag(e) {
+    var tagValue=$("#tag").val();
+    var value=$(e).text();
+    if(tagValue.indexOf(value)==-1){
+        if (tagValue){
+            $("#tag").val(tagValue+','+value);
+        }else{
+            $("#tag").val(value);
+        }
+    }
+}
+
+function tag_click() {
+    $(".tab-pane:first").toggleClass("active");
+    $(".tags li:first").toggleClass("active");
+    $(".tags").toggle();
+}

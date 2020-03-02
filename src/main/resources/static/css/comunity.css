@@ -107,12 +107,25 @@ body{
 }
 
 .question-tags{
-    margin-right: 5px;
+    margin: 5px 5px;
+    display: inline-block;
     font-size: 13px;
+}
+
+.publish-tags{
+    font-size: 13px;
+    cursor: pointer;
+    white-space: normal;
+    margin: 5px 5px;
+    display: inline-block;
 }
 
 .related-question{
     list-style: none;
     margin-left: -15px;
     font-size: 17px;
+}
+
+.tags{
+    display: none;
 }

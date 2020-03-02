@@ -1,7 +1,9 @@
 package com.zhang.comunity.interceptor;
 
 import com.zhang.comunity.entity.User;
+import com.zhang.comunity.enums.NotificationStatusEnum;
 import com.zhang.comunity.mapper.UserMapper;
+import com.zhang.comunity.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -23,6 +25,9 @@ public class SessionInterceptor implements HandlerInterceptor {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private NotificationService notificationService;
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Cookie[] cookies=request.getCookies();
@@ -30,7 +35,12 @@ public class SessionInterceptor implements HandlerInterceptor {
             for(Cookie cookie:cookies){
                 if(cookie.getName().equals("token")){
                     User u=userMapper.getUserByToken(cookie.getValue());
-                    request.getSession().setAttribute("user",u);
+                    if(u!=null){
+                        request.getSession().setAttribute("user",u);
+                        //统计未读数目
+                        int unReadNum=notificationService.countNotifyByStatus(NotificationStatusEnum.UNREAD.getStatus(),u.getId());
+                        request.getSession().setAttribute("unReadNum",unReadNum);
+                    }
                     break;
                 }
             }

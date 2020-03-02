@@ -1,6 +1,8 @@
 package com.zhang.comunity.controller;
 
+import com.zhang.comunity.cache.TagCache;
 import com.zhang.comunity.dto.QuestionDTO;
+import com.zhang.comunity.dto.TagDTO;
 import com.zhang.comunity.entity.Question;
 import com.zhang.comunity.entity.User;
 import com.zhang.comunity.mapper.QuestionMapper;
@@ -12,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * @author Zhang Zeming
@@ -33,11 +36,13 @@ public class PublishController {
         model.addAttribute("description",questionDTO.getDescription());
         model.addAttribute("tag",questionDTO.getTag());
         model.addAttribute("questionId",questionDTO.getId());
+        model.addAttribute("allTags", TagCache.get());
         return "publish";
     }
 
     @GetMapping("/publish")
-    public String publish(){
+    public String publish(Model model){
+        model.addAttribute("allTags", TagCache.get());
         return "publish";
     }
 
@@ -63,6 +68,9 @@ public class PublishController {
             model.addAttribute("error","标记不能为空");
             return "publish";
         }
+
+        List<TagDTO> tagDTOList = TagCache.get();
+        model.addAttribute("allTags", tagDTOList);
 
 
         User u=(User)request.getSession().getAttribute("user");
