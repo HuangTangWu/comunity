@@ -2,13 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>幽兰社区</title>
+    <title>神码社区</title>
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap-theme.css">
     <link rel="stylesheet" href="/css/comunity.css">
+    <link rel="stylesheet" href="/css/editormd.min.css">
     <script type="text/javascript" src="/webjars/jquery/3.3.1/jquery.min.js"></script>
     <script type="application/javascript" src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/comment.js"></script>
+    <script type="text/javascript" src="/js/editormd.min.js"></script>
     <script type="text/javascript">
         $(function ($) {
             var errMsg=$(".errorHidden").val();
@@ -35,11 +37,24 @@
                            class="form-control" id="title" placeholder="问题标题.....">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="question-editor">
                     <label for="description">问题补充</label>
-                    <textarea class="form-control" th:utext="${description}" autocomplete="off"
+                    <textarea class="form-control" th:utext="${description}" autocomplete="off" style="display:none;"
                               id="description" name="description" cols="30" rows="10"></textarea>
                 </div>
+
+                <script type="text/javascript">
+                    $(function() {
+                        var editor = editormd("question-editor", {
+                            width  : "100%",
+                            height : 350,
+                            path   : "/js/lib/",
+                            delay: 0,
+                            watch:false,
+                            placeholder:"请您输入问题描述"
+                        });
+                    });
+                </script>
 
                 <div class="form-group">
                     <label for="tag">输入标签</label>

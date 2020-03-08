@@ -123,4 +123,26 @@ public class QuestionService {
         List<Question> questionList=questionMapper.getRelatedQuestionByTag(map);
         return questionList;
     }
+
+   public List<QuestionDTO> getSearchQuestion(String searchContent){
+       StringBuilder builder=new StringBuilder();
+       for (String s : searchContent.split("\\s+")) {
+           builder.append(s).append("|");
+       }
+       String search = builder.toString().substring(0,builder.length()-1);
+       Map<String,String> map=new HashMap<>();
+       map.put("search",search);
+       List<Question> questionList=questionMapper.getSearchQuestion(map);
+       List<QuestionDTO> questionDTOList=new ArrayList<>();
+       for (Question questions :
+               questionList) {
+           User u=userMapper.getUserById(questions.getCreator());
+           QuestionDTO questionDTO = new QuestionDTO();
+           BeanUtils.copyProperties(questions,questionDTO);
+           questionDTO.setUser(u);
+           questionDTOList.add(questionDTO);
+       }
+       return questionDTOList;
+
+   }
 }

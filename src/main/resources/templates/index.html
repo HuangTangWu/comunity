@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>幽兰社区</title>
+    <title>神码社区</title>
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap-theme.css">
     <link rel="stylesheet" href="/css/comunity.css">
@@ -36,7 +36,6 @@
                         <h4 class="media-heading">
                             <a th:href="@{'/question/'+${question.id}}">[(${question.title})]</a>
                         </h4>
-                        <span th:text="${question.description}"></span><br>
                         <span class="desc-text">[(${question.user.name})]发布了文章• [(${question.comment_count})] 个评论 • [(${question.view_count})] 次浏览 • <span th:text="${#dates.format(question.gmt_create,'yyyy-MM-dd HH:mm')}"></span></span>
                     </div>
                 </div>

@@ -130,4 +130,15 @@
         and
             qs.tag REGEXP #{tag}
     </select>
+
+    <select id="getSearchQuestion"  resultType="question" parameterType="map">
+        select
+            qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag
+        from
+            question qs
+        where
+            qs.title REGEXP #{search}
+            or qs.description REGEXP #{search}
+            or qs.tag REGEXP #{search}
+    </select>
 </mapper>

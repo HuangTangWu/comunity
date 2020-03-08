@@ -62,6 +62,7 @@ public class ProfileController {
             model.addAttribute("sectionName","最新回复");
             model.addAttribute("section","reply");
             int countNotify = notificationService.countNotify(Long.valueOf(String.valueOf(u.getId())));
+            PageHelper.startPage(page_num,page_size);
             List<Notification> notificationList = notificationService.getNotify(Long.valueOf(String.valueOf(u.getId())));
             PageInfo<Notification> pageInfo=new PageInfo<>(notificationList);
             Pagination pagination=notificationService.getPages(countNotify,page_num,page_size,pageInfo);

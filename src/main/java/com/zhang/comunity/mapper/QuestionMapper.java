@@ -35,4 +35,6 @@ public interface QuestionMapper {
     void incCommentCount(Integer id);
 
     List<Question> getRelatedQuestionByTag(Map map);
+
+    List<Question> getSearchQuestion(Map<String, String> map);
 }

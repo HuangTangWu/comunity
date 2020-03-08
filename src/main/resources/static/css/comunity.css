@@ -129,3 +129,11 @@ body{
 .tags{
     display: none;
 }
+
+.profile_reply{
+    margin-bottom: 20px;
+}
+
+#pro_reply{
+    margin-left: 20px;
+}

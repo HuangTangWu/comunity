@@ -27,7 +27,7 @@ public class IndexController {
     @RequestMapping("/")
     public String index(Model model,
                         @RequestParam(value = "pageNum",defaultValue = "1") String pageNum,
-                        @RequestParam(value ="pageSize" ,defaultValue = "6") String pageSize){
+                        @RequestParam(value ="pageSize" ,defaultValue = "7") String pageSize){
 
 
         int total = questionService.countQuestion();
