@@ -24,6 +24,8 @@
             notification
         where
             receiver=#{value}
+        order by
+            gmt_create desc
     </select>
 
     <select id="countNotifyByReceiver" parameterType="long" resultType="int">
