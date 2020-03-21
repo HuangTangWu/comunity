@@ -37,7 +37,9 @@
 
                 <script type="text/javascript">
                     $(function() {
-                        editormd.markdownToHTML("question-markdown-view", {});
+                        editormd.markdownToHTML("question-markdown-view", {
+                            emoji:true
+                        });
                     });
                 </script>
 
@@ -76,7 +78,9 @@
                             </h5>
                             <div th:text="${comment.content}"></div>
                             <div class="question-comment">
-                                <span class="glyphicon glyphicon-thumbs-up icon"></span>
+                                <span class="glyphicon glyphicon-thumbs-up icon" th:data-id="${comment.id}" onclick="like_comment(this)">
+                                    <span class="icon-commentCount" th:id="'like-'+${comment.id}" th:text="${comment.likeCount}"></span>
+                                </span>
                                 <span class="glyphicon glyphicon-comment icon" th:data-id="${comment.id}" onclick="second_comment(this)">
                                     <span class="icon-commentCount" th:text="${comment.commentCount}"></span>
                                 </span>
@@ -118,7 +122,7 @@
                 </div>
             </div>
             <div th:if="${session.user==null}">
-                <h4 align="center">要回复文章请先<a href="https://github.com/login/oauth/authorize?client_id=516d2289a45d5bae20c0&redirect_uri=http://localhost:8087/callback&scope=user&state=1">登录</a></h4>
+                <h4 align="center">要回复文章请先<a th:href="@{https://github.com/login/oauth/authorize(client_id='516d2289a45d5bae20c0',redirect_uri=${#httpServletRequest.getScheme()+'://'+#httpServletRequest.getServerName()+':'+#httpServletRequest.getServerPort()+#httpServletRequest.getContextPath()+'/callback'},scope='user',state=1)}">登录</a></h4>
             </div>
         </div>
 

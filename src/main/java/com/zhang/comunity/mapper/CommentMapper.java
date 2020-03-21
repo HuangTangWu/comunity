@@ -4,6 +4,7 @@ import com.zhang.comunity.entity.Comment;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Zhang Zeming
@@ -19,4 +20,6 @@ public interface CommentMapper {
     List<Comment> selectCommentById(Long parentId);
 
     int incCommentCount(int parseInt);
+
+    int updateLikeCount(Map map);
 }

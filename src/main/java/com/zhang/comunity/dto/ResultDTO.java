@@ -30,7 +30,7 @@ public class ResultDTO {
         return errorOf(e.getCode(),e.getMessage());
     }
 
-    private static ResultDTO errorOf(Integer code, String message) {
+    public static ResultDTO errorOf(Integer code, String message) {
         ResultDTO resultDTO = new ResultDTO();
         resultDTO.setCode(code);
         resultDTO.setMessage(message);

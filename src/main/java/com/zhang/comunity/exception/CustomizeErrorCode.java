@@ -14,7 +14,8 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode {
     COMMENT_NOT_FOUND(2006,"回复的评论消失了,换一个把！"),
     CONTENT_EMPTY(2007,"评论的内容为空！"),
     NOTIFY_NOT_FOUND(2008,"此通知丢失了！！！"),
-    SEARCH_EMPTY(2008,"此通知丢失了！！！");
+    SEARCH_EMPTY(2008,"此通知丢失了！！！"),
+    UPLOAD_FAIL(2009,"图片上传失败");
     private String message;
     private Integer code;
 

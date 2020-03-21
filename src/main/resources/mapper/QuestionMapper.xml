@@ -141,4 +141,24 @@
             or qs.description REGEXP #{search}
             or qs.tag REGEXP #{search}
     </select>
+
+    <select id="getHotQuestion" resultType="question">
+        select
+            qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag
+        from
+            question qs
+        order by
+            qs.comment_count desc
+        limit 0,10
+    </select>
+
+    <select id="getPopularTags" resultType="java.lang.String">
+        select
+            tag
+        from
+            question
+        order by
+            view_count desc
+        limit 0,12
+    </select>
 </mapper>

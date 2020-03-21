@@ -145,4 +145,14 @@ public class QuestionService {
        return questionDTOList;
 
    }
+
+    //获得热门话题
+    public List<Question> getHotQuestion() {
+        return questionMapper.getHotQuestion();
+    }
+
+    //获得热门标签
+    public List<String> getPopularTags() {
+        return questionMapper.getPopularTags();
+    }
 }

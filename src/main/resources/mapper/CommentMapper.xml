@@ -41,4 +41,13 @@
         where
             id=#{value}
     </update>
+
+    <update id="updateLikeCount" parameterType="map">
+        update
+            comment
+        set
+            like_count=like_count + #{num}
+        where
+            id=#{id}
+    </update>
 </mapper>

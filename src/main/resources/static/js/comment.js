@@ -61,6 +61,53 @@ function second_comment(e){
     $(e).toggleClass("active");
 }
 
+//点赞
+function like_comment(e) {
+    var id =$(e).attr("data-id");
+    if ($(e).hasClass("active")){
+        //取消点赞
+        var url="/like?id="+id+"&num=-1"
+        var num=-1;
+        doAjax(url,num,id);
+    }else{
+        var url="/like?id="+id+"&num=1"
+        var num=1;
+        doAjax(url,num,id);
+    }
+
+
+    $(e).toggleClass("active");
+}
+
+function doAjax(url,num,id) {
+    $.ajax({
+        type:"GET",
+        url: url,
+        success:function (response) {
+            if(response.code==200){
+                //点赞成功
+                var count=parseInt($("#like-"+id).text());
+                count=count+num;
+                $("#like-"+id).text(count);
+            }else{
+                if(response.code==2003){
+                    //用户未登录
+                    var path=getRootPath();
+                    var isAccept = window.confirm(response.message);
+                    if(isAccept){
+                        var loginPath="https://github.com/login/oauth/authorize?client_id=516d2289a45d5bae20c0&redirect_uri="+path+"/callback&scope=user&state=1";
+                        window.open(loginPath);
+                        window.localStorage.setItem("close",true);
+                    }
+                }else{
+                    alert(response.message);
+                }
+
+            }
+        }
+    })
+}
+
 //二级评论提交
 function comment2_post(e) {
     var parentId = e.getAttribute("data-id");
@@ -94,9 +141,11 @@ function doPost(parentId,content,type,url) {
             }else{
                 if(response.code==2003){
                     //用户未登录
+                    var path=getRootPath();
                     var isAccept = window.confirm(response.message);
                     if(isAccept){
-                        window.open("https://github.com/login/oauth/authorize?client_id=516d2289a45d5bae20c0&redirect_uri=http://localhost:8087/callback&scope=user&state=1");
+                        var loginPath="https://github.com/login/oauth/authorize?client_id=516d2289a45d5bae20c0&redirect_uri="+path+"/callback&scope=user&state=1";
+                        window.open(loginPath);
                         window.localStorage.setItem("close",true);
                     }
                 }else{
@@ -125,4 +174,17 @@ function tag_click() {
     $(".tab-pane:first").toggleClass("active");
     $(".tags li:first").toggleClass("active");
     $(".tags").toggle();
+}
+
+function getRootPath(){
+    //获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
+    var curWwwPath=window.document.location.href;
+    // 获取主机地址之后的目录，如： uimcardprj/share/meun.jsp
+    var pathName=window.document.location.pathname;
+    var pos=curWwwPath.indexOf(pathName);
+    // 获取主机地址，如： http://localhost:8083
+    var localhostPaht=curWwwPath.substring(0,pos);
+    // 获取带"/"的项目名，如：/uimcardprj
+    var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+    return(localhostPaht);
 }

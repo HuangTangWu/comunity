@@ -6,7 +6,6 @@ import com.zhang.comunity.dto.ResultDTO;
 import com.zhang.comunity.entity.Comment;
 import com.zhang.comunity.entity.User;
 import com.zhang.comunity.exception.CustomizeErrorCode;
-import com.zhang.comunity.exception.CustomizeException;
 import com.zhang.comunity.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -55,5 +54,21 @@ public class CommentController {
         //根据id找二级评论的内容
         List<CommentDTO> commentDTOList = commentService.getCommentByQuestionId(id);
         return commentDTOList;
+    }
+
+    @GetMapping("/like")
+    @ResponseBody
+    private Object updateLike(@RequestParam(value = "id") Integer id,
+                              @RequestParam(value = "num") Integer num,
+                              HttpServletRequest request){
+        User u=(User)request.getSession().getAttribute("user");
+        if(u==null){
+            return ResultDTO.errorOf(CustomizeErrorCode.NO_LOGIN);
+        }
+        int likeCount = commentService.updateLikeCount(id,num);
+        if (likeCount==0){
+            return ResultDTO.errorOf(2003,"网络异常");
+        }
+        return ResultDTO.okOf();
     }
 }

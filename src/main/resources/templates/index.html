@@ -64,24 +64,26 @@
                 </ul>
             </nav>
         </div>
-        <div class="container-fluid col-lg-3 col-md-12 col-sm-12 col-xs-12" >
-            <h1>相关问题</h1>
-            <h5>kibana分析nginx日志</h5>
-            <h6>elasticsearch 每个shard对应的文件含义</h6>
-            <h6>Filebeat与kafka集成</h6>
-            <h5>使用elasticsearch-rtf</h5>
-            <h7>修改elasticsearch.yml文件后无法启动es</h7>
-            <h7>在Elasticsearch 6.1.3版本中</h7>
-            <h5>发现translog文件过多导致异常</h5>
-            <h5>怎么设置让索引文件全部在内存中查询</h5>
-            <h5>filebeat->kafka没反应。</h5>
-            <h5>logstash 多日志文件监控</h5>
-            <h5>filebeat 5.6 如何定义多个index</h5>
-            <h5>发现translog文件过多导致异常</h5>
-            <h5>怎么设置让索引文件全部在内存中查询</h5>
-            <h5>filebeat->kafka没反应。</h5>
-            <h5>logstash 多日志文件监控</h5>
-            <h5>filebeat 5.6 如何定义多个index</h5>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12" >
+            <h1>热门</h1>
+            <!--热门问题-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <ul class="popular-question" th:each="hotQs: ${hotQuestion}">
+                    <li>
+                        <a th:href="@{'/question/'+${hotQs.id}}" th:text="${hotQs.title}"></a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h3>热门标签</h3>
+                <div>
+                    <span class="label label-info index-tags" th:each="tag:${popularTags}">
+                        <span class="glyphicon glyphicon-tag"  th:text="${tag}" ></span>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 </div>

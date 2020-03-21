@@ -37,4 +37,8 @@ public interface QuestionMapper {
     List<Question> getRelatedQuestionByTag(Map map);
 
     List<Question> getSearchQuestion(Map<String, String> map);
+
+    List<Question> getHotQuestion();
+
+    List<String> getPopularTags();
 }

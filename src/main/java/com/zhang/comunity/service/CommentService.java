@@ -16,16 +16,10 @@ import com.zhang.comunity.mapper.QuestionMapper;
 import com.zhang.comunity.mapper.UserMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.ClassUtils;
 
-import javax.annotation.Resources;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -139,5 +133,13 @@ public class CommentService {
 
         return commentDTOList;
 
+    }
+
+    public int updateLikeCount(Integer id,Integer num) {
+        Long lid = Long.valueOf(String.valueOf(id));
+        Map map=new HashMap();
+        map.put("id",lid);
+        map.put("num",num);
+        return commentMapper.updateLikeCount(map);
     }
 }

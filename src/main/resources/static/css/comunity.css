@@ -113,6 +113,14 @@ body{
 }
 
 .publish-tags{
+     font-size: 13px;
+     cursor: pointer;
+     white-space: normal;
+     margin: 5px 5px;
+     display: inline-block;
+ }
+
+.index-tags{
     font-size: 13px;
     cursor: pointer;
     white-space: normal;
@@ -124,6 +132,12 @@ body{
     list-style: none;
     margin-left: -15px;
     font-size: 17px;
+}
+.popular-question{
+    list-style: none;
+    margin-left: -35px;
+    font-size: 17px;
+    margin-bottom: 5px;
 }
 
 .tags{
