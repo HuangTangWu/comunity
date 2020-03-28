@@ -1,0 +1,775 @@
+2020-03-28 15:40:58.351  INFO 22768 --- [restartedMain] com.zhang.comunity.ComunityApplication   : Starting ComunityApplication on LAPTOP-0ETI7C1M with PID 22768 (E:\18234\ideaWorkspace1\comunity\target\classes started by 18234 in E:\18234\ideaWorkspace1\comunity)
+2020-03-28 15:40:58.353  INFO 22768 --- [restartedMain] com.zhang.comunity.ComunityApplication   : The following profiles are active: dev
+2020-03-28 15:40:58.434  INFO 22768 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-28 15:40:58.434  INFO 22768 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-28 15:40:58.535  WARN 22768 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-03-28 15:41:00.664  INFO 22768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2020-03-28 15:41:00.671  INFO 22768 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-28 15:41:00.672  INFO 22768 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-28 15:41:00.785  INFO 22768 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-28 15:41:00.785  INFO 22768 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2350 ms
+2020-03-28 15:41:01.545  INFO 22768 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-28 15:41:01.598  INFO 22768 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [templates/index.html]
+2020-03-28 15:41:02.115  INFO 22768 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-28 15:41:02.173  INFO 22768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path ''
+2020-03-28 15:41:02.175  INFO 22768 --- [restartedMain] com.zhang.comunity.ComunityApplication   : Started ComunityApplication in 4.464 seconds (JVM running for 7.386)
+2020-03-28 15:44:30.430  INFO 22768 --- [http-nio-8087-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-28 15:44:30.430  INFO 22768 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-28 15:44:30.438  INFO 22768 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-03-28 15:44:30.604  INFO 22768 --- [http-nio-8087-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-28 15:44:33.231  INFO 22768 --- [http-nio-8087-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-28 15:44:33.256 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 15:44:33.292 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 15:44:33.427 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 15:44:33.479 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 15:44:33.480 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 15:44:33.569 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 15:44:33.575 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 15:44:33.577 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 15:44:33.695 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 15:44:33.700 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:44:33.701 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:44:33.741 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:44:33.749 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:44:33.750 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 15:44:33.783 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:44:33.784 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:44:33.785 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:44:33.826 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:44:33.827 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:44:33.828 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:44:33.867 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:44:33.868 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:44:33.869 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 15:44:33.908 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:44:33.909 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:44:33.910 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 15:44:33.945 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:44:33.946 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:44:33.947 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:44:33.988 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:44:33.990 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 15:44:33.990 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 15:44:34.046 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 15:44:34.047 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 15:44:34.047 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 15:44:34.086 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9
+2020-03-28 15:44:40.264 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.mapper.QuestionMapper.incView      : ==>  Preparing: update question set view_count=view_count+1 where id=? 
+2020-03-28 15:44:40.264 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.mapper.QuestionMapper.incView      : ==> Parameters: 48(Integer)
+2020-03-28 15:44:40.396 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.mapper.QuestionMapper.incView      : <==    Updates: 1
+2020-03-28 15:44:40.397 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getQuestionById   : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id=? 
+2020-03-28 15:44:40.398 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getQuestionById   : ==> Parameters: 48(Integer)
+2020-03-28 15:44:40.448 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getQuestionById   : <==      Total: 1
+2020-03-28 15:44:40.451 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:44:40.452 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:44:40.491 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:44:40.510 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.m.C.selectCommentByParentId        : ==>  Preparing: select id,parent_id parentId,type,commentator,gmt_create,gmt_modify,like_count likeCount,comment_count commentCount,content from comment where parent_id=? 
+2020-03-28 15:44:40.511 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.m.C.selectCommentByParentId        : ==> Parameters: 48(Long)
+2020-03-28 15:44:40.551 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.m.C.selectCommentByParentId        : <==      Total: 0
+2020-03-28 15:44:40.554 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.m.Q.getRelatedQuestionByTag        : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id!=? and qs.tag REGEXP ? 
+2020-03-28 15:44:40.554 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.m.Q.getRelatedQuestionByTag        : ==> Parameters: 48(String), java(String)
+2020-03-28 15:44:40.625 DEBUG 22768 --- [http-nio-8087-exec-4] c.z.c.m.Q.getRelatedQuestionByTag        : <==      Total: 6
+2020-03-28 15:46:17.088 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.QuestionMapper.incView      : ==>  Preparing: update question set view_count=view_count+1 where id=? 
+2020-03-28 15:46:17.089 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.QuestionMapper.incView      : ==> Parameters: 48(Integer)
+2020-03-28 15:46:17.224 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.QuestionMapper.incView      : <==    Updates: 1
+2020-03-28 15:46:17.225 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getQuestionById   : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id=? 
+2020-03-28 15:46:17.226 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getQuestionById   : ==> Parameters: 48(Integer)
+2020-03-28 15:46:17.268 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getQuestionById   : <==      Total: 1
+2020-03-28 15:46:17.269 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:46:17.271 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:46:17.313 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:46:17.314 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.C.selectCommentByParentId        : ==>  Preparing: select id,parent_id parentId,type,commentator,gmt_create,gmt_modify,like_count likeCount,comment_count commentCount,content from comment where parent_id=? 
+2020-03-28 15:46:17.314 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.C.selectCommentByParentId        : ==> Parameters: 48(Long)
+2020-03-28 15:46:17.355 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.C.selectCommentByParentId        : <==      Total: 0
+2020-03-28 15:46:17.355 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.Q.getRelatedQuestionByTag        : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id!=? and qs.tag REGEXP ? 
+2020-03-28 15:46:17.356 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.Q.getRelatedQuestionByTag        : ==> Parameters: 48(String), java(String)
+2020-03-28 15:46:17.436 DEBUG 22768 --- [http-nio-8087-exec-1] c.z.c.m.Q.getRelatedQuestionByTag        : <==      Total: 6
+2020-03-28 15:46:27.671 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.mapper.QuestionMapper.incView      : ==>  Preparing: update question set view_count=view_count+1 where id=? 
+2020-03-28 15:46:27.671 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.mapper.QuestionMapper.incView      : ==> Parameters: 48(Integer)
+2020-03-28 15:46:27.800 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.mapper.QuestionMapper.incView      : <==    Updates: 1
+2020-03-28 15:46:27.801 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getQuestionById   : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id=? 
+2020-03-28 15:46:27.801 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getQuestionById   : ==> Parameters: 48(Integer)
+2020-03-28 15:46:27.837 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getQuestionById   : <==      Total: 1
+2020-03-28 15:46:27.837 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:46:27.838 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:46:27.877 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:46:27.878 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.m.C.selectCommentByParentId        : ==>  Preparing: select id,parent_id parentId,type,commentator,gmt_create,gmt_modify,like_count likeCount,comment_count commentCount,content from comment where parent_id=? 
+2020-03-28 15:46:27.879 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.m.C.selectCommentByParentId        : ==> Parameters: 48(Long)
+2020-03-28 15:46:27.914 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.m.C.selectCommentByParentId        : <==      Total: 0
+2020-03-28 15:46:27.915 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.m.Q.getRelatedQuestionByTag        : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id!=? and qs.tag REGEXP ? 
+2020-03-28 15:46:27.915 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.m.Q.getRelatedQuestionByTag        : ==> Parameters: 48(String), java(String)
+2020-03-28 15:46:27.991 DEBUG 22768 --- [http-nio-8087-exec-2] c.z.c.m.Q.getRelatedQuestionByTag        : <==      Total: 6
+2020-03-28 15:53:02.564  INFO 22768 --- [Thread-13] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-28 15:53:02.565  INFO 22768 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-03-28 15:53:02.577  INFO 22768 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-03-28 15:53:04.187  INFO 22768 --- [restartedMain] com.zhang.comunity.ComunityApplication   : Starting ComunityApplication on LAPTOP-0ETI7C1M with PID 22768 (E:\18234\ideaWorkspace1\comunity\target\classes started by 18234 in E:\18234\ideaWorkspace1\comunity)
+2020-03-28 15:53:04.187  INFO 22768 --- [restartedMain] com.zhang.comunity.ComunityApplication   : The following profiles are active: dev
+2020-03-28 15:53:05.046  WARN 22768 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-03-28 15:53:05.130  INFO 22768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2020-03-28 15:53:05.130  INFO 22768 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-28 15:53:05.131  INFO 22768 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-28 15:53:05.172  INFO 22768 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-28 15:53:05.172  INFO 22768 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 982 ms
+2020-03-28 15:53:05.303  WARN 22768 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webConfig' defined in file [E:\18234\ideaWorkspace1\comunity\target\classes\com\zhang\comunity\interceptor\WebConfig.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.zhang.comunity.interceptor.WebConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@37ee05f]
+2020-03-28 15:53:05.304  INFO 22768 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-03-28 15:53:05.310  INFO 22768 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-28 15:53:05.356 ERROR 22768 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webConfig' defined in file [E:\18234\ideaWorkspace1\comunity\target\classes\com\zhang\comunity\interceptor\WebConfig.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.zhang.comunity.interceptor.WebConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@37ee05f]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:572) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.zhang.comunity.ComunityApplication.main(ComunityApplication.java:10) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.zhang.comunity.interceptor.WebConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@37ee05f]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:734) ~[spring-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:666) ~[spring-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.buildResourceMetadata(CommonAnnotationBeanPostProcessor.java:382) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:363) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:311) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1094) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: Lcom/zhang/comunity/interceptor/SessionInterceptor;
+	at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583) ~[na:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Class.java:1916) ~[na:1.8.0_161]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:729) ~[spring-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.zhang.comunity.interceptor.SessionInterceptor
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:338) ~[na:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_161]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:144) ~[spring-boot-devtools-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_161]
+	... 30 common frames omitted
+
+2020-03-28 15:55:10.103  INFO 22768 --- [restartedMain] com.zhang.comunity.ComunityApplication   : Starting ComunityApplication on LAPTOP-0ETI7C1M with PID 22768 (E:\18234\ideaWorkspace1\comunity\target\classes started by 18234 in E:\18234\ideaWorkspace1\comunity)
+2020-03-28 15:55:10.103  INFO 22768 --- [restartedMain] com.zhang.comunity.ComunityApplication   : The following profiles are active: dev
+2020-03-28 15:55:10.386  WARN 22768 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-03-28 15:55:10.620  INFO 22768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2020-03-28 15:55:10.621  INFO 22768 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-28 15:55:10.621  INFO 22768 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-28 15:55:10.676  INFO 22768 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-03-28 15:55:10.676  INFO 22768 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 571 ms
+2020-03-28 15:55:10.876  INFO 22768 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-28 15:55:10.895  INFO 22768 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [templates/index.html]
+2020-03-28 15:55:11.052  INFO 22768 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-28 15:55:11.072  INFO 22768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path ''
+2020-03-28 15:55:11.072  INFO 22768 --- [restartedMain] com.zhang.comunity.ComunityApplication   : Started ComunityApplication in 1.009 seconds (JVM running for 856.283)
+2020-03-28 15:55:11.074  INFO 22768 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-03-28 15:57:04.986  INFO 11580 --- [restartedMain] com.zhang.comunity.ComunityApplication   : Starting ComunityApplication on LAPTOP-0ETI7C1M with PID 11580 (E:\18234\ideaWorkspace1\comunity\target\classes started by 18234 in E:\18234\ideaWorkspace1\comunity)
+2020-03-28 15:57:04.987  INFO 11580 --- [restartedMain] com.zhang.comunity.ComunityApplication   : The following profiles are active: dev
+2020-03-28 15:57:05.104  INFO 11580 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-28 15:57:05.104  INFO 11580 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-28 15:57:05.165  WARN 11580 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-03-28 15:57:06.438  INFO 11580 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2020-03-28 15:57:06.447  INFO 11580 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-28 15:57:06.447  INFO 11580 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-28 15:57:06.580  INFO 11580 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-28 15:57:06.580  INFO 11580 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1475 ms
+2020-03-28 15:57:07.219  INFO 11580 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-28 15:57:07.274  INFO 11580 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [templates/index.html]
+2020-03-28 15:57:07.518  INFO 11580 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-28 15:57:07.567  INFO 11580 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path ''
+2020-03-28 15:57:07.571  INFO 11580 --- [restartedMain] com.zhang.comunity.ComunityApplication   : Started ComunityApplication in 3.056 seconds (JVM running for 5.771)
+2020-03-28 15:57:52.023  INFO 11580 --- [http-nio-8087-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-28 15:57:52.023  INFO 11580 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-28 15:57:52.028  INFO 11580 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-03-28 15:57:52.075  INFO 11580 --- [http-nio-8087-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-28 15:57:54.078  INFO 11580 --- [http-nio-8087-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-28 15:57:54.101 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 15:57:54.132 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 15:57:54.251 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 15:57:54.281 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 15:57:54.282 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 15:57:54.371 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 15:57:54.377 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 15:57:54.378 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 15:57:54.499 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 15:57:54.501 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:57:54.501 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:57:54.542 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:57:54.554 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:57:54.555 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 15:57:54.595 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:57:54.597 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:57:54.597 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:57:54.638 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:57:54.639 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:57:54.640 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:57:54.678 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:57:54.678 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:57:54.678 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 15:57:54.722 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:57:54.723 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:57:54.723 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 15:57:54.765 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:57:54.766 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:57:54.766 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:57:54.806 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:57:54.807 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 15:57:54.807 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 15:57:54.860 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 15:57:54.861 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 15:57:54.862 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 15:57:54.903 DEBUG 11580 --- [http-nio-8087-exec-1] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9
+2020-03-28 15:57:59.422 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.QuestionMapper.incView      : ==>  Preparing: update question set view_count=view_count+1 where id=? 
+2020-03-28 15:57:59.422 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.QuestionMapper.incView      : ==> Parameters: 48(Integer)
+2020-03-28 15:57:59.543 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.QuestionMapper.incView      : <==    Updates: 1
+2020-03-28 15:57:59.545 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.getQuestionById   : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id=? 
+2020-03-28 15:57:59.546 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.getQuestionById   : ==> Parameters: 48(Integer)
+2020-03-28 15:57:59.592 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.getQuestionById   : <==      Total: 1
+2020-03-28 15:57:59.594 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:57:59.594 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:57:59.636 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:57:59.657 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.C.selectCommentByParentId        : ==>  Preparing: select id,parent_id parentId,type,commentator,gmt_create,gmt_modify,like_count likeCount,comment_count commentCount,content from comment where parent_id=? 
+2020-03-28 15:57:59.658 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.C.selectCommentByParentId        : ==> Parameters: 48(Long)
+2020-03-28 15:57:59.695 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.C.selectCommentByParentId        : <==      Total: 0
+2020-03-28 15:57:59.697 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.Q.getRelatedQuestionByTag        : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id!=? and qs.tag REGEXP ? 
+2020-03-28 15:57:59.698 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.Q.getRelatedQuestionByTag        : ==> Parameters: 48(String), java(String)
+2020-03-28 15:57:59.766 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.Q.getRelatedQuestionByTag        : <==      Total: 6
+2020-03-28 15:58:25.829 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 15:58:25.829 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 15:58:25.926 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 15:58:25.929 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 15:58:25.930 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 15:58:26.024 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 15:58:26.025 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 15:58:26.026 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 15:58:26.137 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 15:58:26.139 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:58:26.140 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:58:26.174 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:58:26.176 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:58:26.177 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 15:58:26.219 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:58:26.222 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:58:26.223 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:58:26.263 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:58:26.265 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:58:26.266 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:58:26.299 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:58:26.300 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:58:26.301 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 15:58:26.338 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:58:26.342 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:58:26.342 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 15:58:26.375 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:58:26.375 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:58:26.376 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:58:26.407 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:58:26.408 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 15:58:26.408 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 15:58:26.459 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 15:58:26.460 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 15:58:26.461 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 15:58:26.494 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9
+2020-03-28 15:58:27.881 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.QuestionMapper.incView      : ==>  Preparing: update question set view_count=view_count+1 where id=? 
+2020-03-28 15:58:27.881 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.QuestionMapper.incView      : ==> Parameters: 50(Integer)
+2020-03-28 15:58:28.005 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.QuestionMapper.incView      : <==    Updates: 1
+2020-03-28 15:58:28.007 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getQuestionById   : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id=? 
+2020-03-28 15:58:28.008 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getQuestionById   : ==> Parameters: 50(Integer)
+2020-03-28 15:58:28.044 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getQuestionById   : <==      Total: 1
+2020-03-28 15:58:28.046 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 15:58:28.046 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 15:58:28.081 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 15:58:28.087 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.C.selectCommentByParentId        : ==>  Preparing: select id,parent_id parentId,type,commentator,gmt_create,gmt_modify,like_count likeCount,comment_count commentCount,content from comment where parent_id=? 
+2020-03-28 15:58:28.088 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.C.selectCommentByParentId        : ==> Parameters: 50(Long)
+2020-03-28 15:58:28.130 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.C.selectCommentByParentId        : <==      Total: 0
+2020-03-28 15:58:28.132 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.Q.getRelatedQuestionByTag        : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id!=? and qs.tag REGEXP ? 
+2020-03-28 15:58:28.133 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.Q.getRelatedQuestionByTag        : ==> Parameters: 50(String), java|linux(String)
+2020-03-28 15:58:28.239 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.Q.getRelatedQuestionByTag        : <==      Total: 7
+2020-03-28 16:01:59.392 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.QuestionMapper.incView      : ==>  Preparing: update question set view_count=view_count+1 where id=? 
+2020-03-28 16:01:59.392 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.QuestionMapper.incView      : ==> Parameters: 50(Integer)
+2020-03-28 16:01:59.507 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.QuestionMapper.incView      : <==    Updates: 1
+2020-03-28 16:01:59.508 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getQuestionById   : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id=? 
+2020-03-28 16:01:59.508 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getQuestionById   : ==> Parameters: 50(Integer)
+2020-03-28 16:01:59.542 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getQuestionById   : <==      Total: 1
+2020-03-28 16:01:59.543 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:01:59.543 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:01:59.579 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:01:59.580 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.C.selectCommentByParentId        : ==>  Preparing: select id,parent_id parentId,type,commentator,gmt_create,gmt_modify,like_count likeCount,comment_count commentCount,content from comment where parent_id=? 
+2020-03-28 16:01:59.581 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.C.selectCommentByParentId        : ==> Parameters: 50(Long)
+2020-03-28 16:01:59.618 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.C.selectCommentByParentId        : <==      Total: 0
+2020-03-28 16:01:59.619 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.Q.getRelatedQuestionByTag        : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id!=? and qs.tag REGEXP ? 
+2020-03-28 16:01:59.620 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.Q.getRelatedQuestionByTag        : ==> Parameters: 50(String), java|linux(String)
+2020-03-28 16:01:59.721 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.Q.getRelatedQuestionByTag        : <==      Total: 7
+2020-03-28 16:31:32.914 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 16:31:32.918 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 16:31:33.025 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 16:31:33.036 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 16:31:33.036 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 16:31:33.144 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 16:31:33.146 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 16:31:33.148 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 16:31:33.259 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 16:31:33.260 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:31:33.260 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:31:33.299 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:31:33.300 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:31:33.301 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:31:33.335 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:31:33.336 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:31:33.336 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:31:33.373 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:31:33.374 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:31:33.374 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:31:33.411 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:31:33.412 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:31:33.412 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:31:33.445 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:31:33.446 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:31:33.446 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:31:33.479 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:31:33.481 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:31:33.482 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:31:33.518 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:31:33.522 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 16:31:33.523 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 16:31:33.566 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 16:31:33.567 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 16:31:33.567 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 16:31:33.603 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9
+2020-03-28 16:37:20.736 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 16:37:20.737 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 16:37:20.825 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 16:37:20.833 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 16:37:20.834 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 16:37:20.922 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 16:37:20.924 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 16:37:20.925 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 16:37:21.031 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 16:37:21.032 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:21.033 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:37:21.066 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:21.067 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:21.067 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:37:21.106 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:21.106 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:21.106 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:37:21.138 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:21.139 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:21.139 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:37:21.171 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:21.172 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:21.173 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:37:21.207 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:21.208 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:21.208 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:37:21.248 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:21.250 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:21.251 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:37:21.292 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:21.294 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 16:37:21.295 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 16:37:21.348 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 16:37:21.350 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 16:37:21.350 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 16:37:21.386 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9
+2020-03-28 16:37:24.812 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 16:37:24.813 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 16:37:24.994 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 16:37:24.996 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 16:37:24.996 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 16:37:25.141 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 16:37:25.141 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 16:37:25.141 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 16:37:25.466 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 16:37:25.467 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:25.469 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:37:25.569 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:25.570 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:25.570 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:37:25.709 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:25.710 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:25.711 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:37:25.786 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:25.787 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:25.787 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:37:25.819 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:25.820 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:25.820 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:37:25.907 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:25.907 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:25.908 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:37:25.943 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:25.943 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:37:25.944 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:37:25.977 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:37:25.979 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 16:37:25.979 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 16:37:26.045 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 16:37:26.045 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 16:37:26.045 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 16:37:26.077 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9
+2020-03-28 16:38:16.255 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 16:38:16.255 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 16:38:16.361 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 16:38:16.364 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 16:38:16.365 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 16:38:16.482 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 16:38:16.483 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 16:38:16.483 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 16:38:16.688 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 16:38:16.689 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:16.690 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:38:16.727 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:16.728 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:16.728 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:38:16.766 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:16.767 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:16.767 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:38:16.829 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:16.830 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:16.830 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:38:16.896 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:16.897 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:16.897 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:38:16.978 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:16.979 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:16.979 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:38:17.048 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:17.049 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:17.049 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:38:17.114 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:17.115 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 16:38:17.116 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 16:38:17.187 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 16:38:17.189 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 16:38:17.189 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 16:38:17.250 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9
+2020-03-28 16:38:19.258 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 16:38:19.259 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 16:38:19.356 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 16:38:19.360 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 16:38:19.361 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 16:38:19.485 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 16:38:19.485 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 16:38:19.485 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 16:38:19.588 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 16:38:19.588 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:19.588 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:38:19.625 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:19.626 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:19.626 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:38:19.666 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:19.666 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:19.666 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:38:19.703 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:19.704 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:19.704 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:38:19.741 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:19.741 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:19.742 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:38:19.782 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:19.783 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:19.783 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:38:19.815 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:19.816 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:38:19.816 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:38:19.868 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:38:19.869 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 16:38:19.869 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 16:38:19.927 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 16:38:19.928 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 16:38:19.928 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 16:38:19.961 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9
+2020-03-28 16:40:50.616 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 16:40:50.616 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 16:40:50.716 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 16:40:50.718 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 16:40:50.718 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 16:40:50.808 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 16:40:50.809 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 16:40:50.809 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 16:40:50.906 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 16:40:50.906 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:40:50.907 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:40:50.943 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:40:50.943 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:40:50.943 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:40:50.983 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:40:50.984 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:40:50.984 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:40:51.018 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:40:51.018 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:40:51.018 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:40:51.052 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:40:51.052 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:40:51.052 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:40:51.084 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:40:51.084 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:40:51.085 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:40:51.121 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:40:51.121 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:40:51.121 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:40:51.155 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:40:51.156 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 16:40:51.156 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 16:40:51.194 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 16:40:51.197 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 16:40:51.197 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 16:40:51.228 DEBUG 11580 --- [http-nio-8087-exec-8] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9
+2020-03-28 16:41:08.905 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 16:41:08.906 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 16:41:09.015 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 16:41:09.015 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 16:41:09.015 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 16:41:09.119 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 16:41:09.120 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 16:41:09.120 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 16:41:09.284 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 16:41:09.284 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:09.285 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:41:09.350 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:09.351 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:09.351 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:41:09.410 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:09.410 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:09.410 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:41:09.468 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:09.469 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:09.469 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:41:09.519 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:09.520 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:09.521 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:41:09.567 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:09.569 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:09.569 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:41:09.629 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:09.631 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:09.632 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:41:09.716 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:09.718 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 16:41:09.718 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 16:41:09.798 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 16:41:09.799 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 16:41:09.799 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 16:41:09.889 DEBUG 11580 --- [http-nio-8087-exec-4] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9
+2020-03-28 16:41:11.442 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.QuestionMapper.incView      : ==>  Preparing: update question set view_count=view_count+1 where id=? 
+2020-03-28 16:41:11.442 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.QuestionMapper.incView      : ==> Parameters: 48(Integer)
+2020-03-28 16:41:11.552 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.QuestionMapper.incView      : <==    Updates: 1
+2020-03-28 16:41:11.555 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.getQuestionById   : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id=? 
+2020-03-28 16:41:11.555 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.getQuestionById   : ==> Parameters: 48(Integer)
+2020-03-28 16:41:11.597 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.QuestionMapper.getQuestionById   : <==      Total: 1
+2020-03-28 16:41:11.598 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:11.599 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:41:11.641 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:11.643 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.C.selectCommentByParentId        : ==>  Preparing: select id,parent_id parentId,type,commentator,gmt_create,gmt_modify,like_count likeCount,comment_count commentCount,content from comment where parent_id=? 
+2020-03-28 16:41:11.643 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.C.selectCommentByParentId        : ==> Parameters: 48(Long)
+2020-03-28 16:41:11.680 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.C.selectCommentByParentId        : <==      Total: 0
+2020-03-28 16:41:11.681 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.Q.getRelatedQuestionByTag        : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id!=? and qs.tag REGEXP ? 
+2020-03-28 16:41:11.682 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.Q.getRelatedQuestionByTag        : ==> Parameters: 48(String), java(String)
+2020-03-28 16:41:11.801 DEBUG 11580 --- [http-nio-8087-exec-5] c.z.c.m.Q.getRelatedQuestionByTag        : <==      Total: 6
+2020-03-28 16:41:18.031 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 16:41:18.031 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 16:41:18.125 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 16:41:18.128 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 16:41:18.129 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 16:41:18.220 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 16:41:18.221 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 16:41:18.222 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 16:41:18.322 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 16:41:18.322 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:18.323 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:41:18.357 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:18.358 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:18.358 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:41:18.390 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:18.391 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:18.392 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:41:18.427 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:18.428 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:18.429 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:41:18.460 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:18.461 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:18.461 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:41:18.494 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:18.494 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:18.494 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:41:18.527 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:18.527 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:18.527 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:41:18.558 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:18.559 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 16:41:18.559 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 16:41:18.602 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 16:41:18.602 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 16:41:18.603 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 16:41:18.639 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9
+2020-03-28 16:41:19.894 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.QuestionMapper.incView      : ==>  Preparing: update question set view_count=view_count+1 where id=? 
+2020-03-28 16:41:19.894 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.QuestionMapper.incView      : ==> Parameters: 51(Integer)
+2020-03-28 16:41:20.004 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.QuestionMapper.incView      : <==    Updates: 1
+2020-03-28 16:41:20.005 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getQuestionById   : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id=? 
+2020-03-28 16:41:20.005 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getQuestionById   : ==> Parameters: 51(Integer)
+2020-03-28 16:41:20.040 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.QuestionMapper.getQuestionById   : <==      Total: 1
+2020-03-28 16:41:20.041 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:20.041 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:41:20.087 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:20.088 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.C.selectCommentByParentId        : ==>  Preparing: select id,parent_id parentId,type,commentator,gmt_create,gmt_modify,like_count likeCount,comment_count commentCount,content from comment where parent_id=? 
+2020-03-28 16:41:20.089 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.C.selectCommentByParentId        : ==> Parameters: 51(Long)
+2020-03-28 16:41:20.141 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.C.selectCommentByParentId        : <==      Total: 1
+2020-03-28 16:41:20.145 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:20.145 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:41:20.212 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:20.250 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.Q.getRelatedQuestionByTag        : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id!=? and qs.tag REGEXP ? 
+2020-03-28 16:41:20.251 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.Q.getRelatedQuestionByTag        : ==> Parameters: 51(String), centos|idea|java(String)
+2020-03-28 16:41:20.347 DEBUG 11580 --- [http-nio-8087-exec-2] c.z.c.m.Q.getRelatedQuestionByTag        : <==      Total: 7
+2020-03-28 16:41:25.834 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 16:41:25.834 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 16:41:25.951 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 16:41:25.953 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 16:41:25.953 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 16:41:26.037 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 16:41:26.037 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 16:41:26.038 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 16:41:26.142 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 16:41:26.142 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:26.143 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:41:26.176 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:26.177 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:26.177 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:41:26.218 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:26.219 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:26.219 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:41:26.262 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:26.264 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:26.265 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:41:26.303 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:26.303 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:26.304 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:41:26.342 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:26.343 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:26.343 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:41:26.384 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:26.385 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:41:26.385 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:41:26.417 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:41:26.418 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 16:41:26.418 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 16:41:26.458 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 16:41:26.458 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 16:41:26.458 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 16:41:26.494 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9
+2020-03-28 16:42:04.368 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.mapper.QuestionMapper.incView      : ==>  Preparing: update question set view_count=view_count+1 where id=? 
+2020-03-28 16:42:04.368 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.mapper.QuestionMapper.incView      : ==> Parameters: 50(Integer)
+2020-03-28 16:42:04.475 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.mapper.QuestionMapper.incView      : <==    Updates: 1
+2020-03-28 16:42:04.476 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.m.QuestionMapper.getQuestionById   : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id=? 
+2020-03-28 16:42:04.476 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.m.QuestionMapper.getQuestionById   : ==> Parameters: 50(Integer)
+2020-03-28 16:42:04.511 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.m.QuestionMapper.getQuestionById   : <==      Total: 1
+2020-03-28 16:42:04.512 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:04.513 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:42:04.548 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:04.549 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.m.C.selectCommentByParentId        : ==>  Preparing: select id,parent_id parentId,type,commentator,gmt_create,gmt_modify,like_count likeCount,comment_count commentCount,content from comment where parent_id=? 
+2020-03-28 16:42:04.550 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.m.C.selectCommentByParentId        : ==> Parameters: 50(Long)
+2020-03-28 16:42:04.584 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.m.C.selectCommentByParentId        : <==      Total: 0
+2020-03-28 16:42:04.585 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.m.Q.getRelatedQuestionByTag        : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id!=? and qs.tag REGEXP ? 
+2020-03-28 16:42:04.585 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.m.Q.getRelatedQuestionByTag        : ==> Parameters: 50(String), java|linux(String)
+2020-03-28 16:42:04.690 DEBUG 11580 --- [http-nio-8087-exec-7] c.z.c.m.Q.getRelatedQuestionByTag        : <==      Total: 7
+2020-03-28 16:42:12.009 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 16:42:12.009 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 16:42:12.100 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 16:42:12.104 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 16:42:12.105 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 16:42:12.190 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 16:42:12.191 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 16:42:12.191 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 16:42:12.291 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 16:42:12.292 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:12.292 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:42:12.327 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:12.327 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:12.328 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:42:12.367 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:12.368 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:12.368 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:42:12.401 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:12.402 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:12.402 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:42:12.435 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:12.436 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:12.436 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:42:12.468 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:12.469 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:12.469 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:42:12.504 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:12.505 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:12.505 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:42:12.538 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:12.538 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 16:42:12.539 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 16:42:12.583 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 16:42:12.584 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 16:42:12.584 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 16:42:12.623 DEBUG 11580 --- [http-nio-8087-exec-3] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9
+2020-03-28 16:42:25.063 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.QuestionMapper.incView      : ==>  Preparing: update question set view_count=view_count+1 where id=? 
+2020-03-28 16:42:25.063 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.QuestionMapper.incView      : ==> Parameters: 50(Integer)
+2020-03-28 16:42:25.189 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.QuestionMapper.incView      : <==    Updates: 1
+2020-03-28 16:42:25.190 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.getQuestionById   : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id=? 
+2020-03-28 16:42:25.191 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.getQuestionById   : ==> Parameters: 50(Integer)
+2020-03-28 16:42:25.229 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.QuestionMapper.getQuestionById   : <==      Total: 1
+2020-03-28 16:42:25.230 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:25.230 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:42:25.270 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:25.271 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.C.selectCommentByParentId        : ==>  Preparing: select id,parent_id parentId,type,commentator,gmt_create,gmt_modify,like_count likeCount,comment_count commentCount,content from comment where parent_id=? 
+2020-03-28 16:42:25.271 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.C.selectCommentByParentId        : ==> Parameters: 50(Long)
+2020-03-28 16:42:25.303 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.C.selectCommentByParentId        : <==      Total: 0
+2020-03-28 16:42:25.303 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.Q.getRelatedQuestionByTag        : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs where qs.id!=? and qs.tag REGEXP ? 
+2020-03-28 16:42:25.304 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.Q.getRelatedQuestionByTag        : ==> Parameters: 50(String), java|linux(String)
+2020-03-28 16:42:25.436 DEBUG 11580 --- [http-nio-8087-exec-6] c.z.c.m.Q.getRelatedQuestionByTag        : <==      Total: 7
+2020-03-28 16:42:32.694 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.countQuestion     : ==>  Preparing: select count(*) from question 
+2020-03-28 16:42:32.694 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.countQuestion     : ==> Parameters: 
+2020-03-28 16:42:32.813 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.countQuestion     : <==      Total: 1
+2020-03-28 16:42:32.816 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.Q.getAllQuestion_COUNT           : ==>  Preparing: SELECT count(0) FROM question 
+2020-03-28 16:42:32.817 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.Q.getAllQuestion_COUNT           : ==> Parameters: 
+2020-03-28 16:42:32.909 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.Q.getAllQuestion_COUNT           : <==      Total: 1
+2020-03-28 16:42:32.909 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getAllQuestion    : ==>  Preparing: select id,title,description,gmt_create,gmt_modify,creator,comment_count,view_count,like_count,tag from question order by view_count desc LIMIT ? 
+2020-03-28 16:42:32.910 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getAllQuestion    : ==> Parameters: 7(Integer)
+2020-03-28 16:42:33.045 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getAllQuestion    : <==      Total: 7
+2020-03-28 16:42:33.045 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:33.046 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:42:33.104 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:33.105 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:33.105 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:42:33.145 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:33.146 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:33.147 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:42:33.184 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:33.186 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:33.186 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:42:33.228 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:33.228 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:33.228 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:42:33.283 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:33.284 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:33.284 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 17(Integer)
+2020-03-28 16:42:33.350 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:33.351 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==>  Preparing: select id,name,account_id accountId,token,gmt_create,gmt_modify,avatar_url avatarUrl from user where id=? 
+2020-03-28 16:42:33.351 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : ==> Parameters: 16(Integer)
+2020-03-28 16:42:33.425 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.mapper.UserMapper.getUserById      : <==      Total: 1
+2020-03-28 16:42:33.427 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getHotQuestion    : ==>  Preparing: select qs.id id,qs.title,qs.description,qs.gmt_create,qs.gmt_modify,qs.creator,qs.comment_count,qs.view_count,qs.like_count,qs.tag from question qs order by qs.comment_count desc limit 0,10 
+2020-03-28 16:42:33.427 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getHotQuestion    : ==> Parameters: 
+2020-03-28 16:42:33.506 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getHotQuestion    : <==      Total: 9
+2020-03-28 16:42:33.507 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getPopularTags    : ==>  Preparing: select tag from question order by view_count desc limit 0,12 
+2020-03-28 16:42:33.508 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getPopularTags    : ==> Parameters: 
+2020-03-28 16:42:33.590 DEBUG 11580 --- [http-nio-8087-exec-9] c.z.c.m.QuestionMapper.getPopularTags    : <==      Total: 9

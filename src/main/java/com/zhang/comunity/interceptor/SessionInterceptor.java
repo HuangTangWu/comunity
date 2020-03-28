@@ -5,6 +5,7 @@ import com.zhang.comunity.enums.NotificationStatusEnum;
 import com.zhang.comunity.mapper.UserMapper;
 import com.zhang.comunity.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,8 +29,11 @@ public class SessionInterceptor implements HandlerInterceptor {
     @Autowired
     private NotificationService notificationService;
 
+    @Value("${github.client.redirect_uri}")
+    private String redirectUri;
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        request.getServletContext().setAttribute("redirectUri", redirectUri);
         Cookie[] cookies=request.getCookies();
         if(cookies!=null&&cookies.length>0){
             for(Cookie cookie:cookies){

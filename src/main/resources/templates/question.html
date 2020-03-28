@@ -122,7 +122,7 @@
                 </div>
             </div>
             <div th:if="${session.user==null}">
-                <h4 align="center">要回复文章请先<a th:href="@{https://github.com/login/oauth/authorize(client_id='516d2289a45d5bae20c0',redirect_uri=${#httpServletRequest.getScheme()+'://'+#httpServletRequest.getServerName()+':'+#httpServletRequest.getServerPort()+#httpServletRequest.getContextPath()+'/callback'},scope='user',state=1)}">登录</a></h4>
+                <h4 align="center">要回复文章请先<a th:href="@{https://github.com/login/oauth/authorize(client_id='516d2289a45d5bae20c0',redirect_uri=${#httpServletRequest.getServletContext().getAttribute('redirectUri')},scope='user',state=1)}">登录</a></h4>
             </div>
         </div>
 
@@ -165,5 +165,6 @@
         </div>
     </div>
 </div>
+<div th:insert="~{ footer:: foot}"></div>
 </body>
 </html>
